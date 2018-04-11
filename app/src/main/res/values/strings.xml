@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">English Conversational Club </string>
+
+    <!-- Main menu -->
+    <string name="config">Configurations</string>
+    <string name="start_game">Start game</string>
+
+    <!-- Game -->
+    <string name="game_started">Game started</string>
+    <string name="finish_game">Finish game</string>
+
+    <!-- Preferences -->
+    <string name="game_preferences">Game preferences</string>
+    <string name="edittext_mintime">key_min</string>
+    <string name="edittext_maxtime">key_max</string>
+    <string name="difficulty_key">key_difficulty</string>
+
+    <!-- Minimum time -->
+    <string name="dialog_title_mintime">Minimum time</string>
+    <string name="summary_mintime">Minimum time for the buzzer sound</string>
+    <string name="title_mintime">Min Time</string>
+
+    <!-- Maximum time -->
+    <string name="dialog_title_maxtime">Maximum time</string>
+    <string name="summary_maxtime">Maximum time for the buzzer sound</string>
+    <string name="title_maxtime">Max Time</string>
+    <string name="timeout">Time is out</string>
+
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+
+    <!-- Difficulty -->
+    <string name="difficulty">Difficulty</string>
+
+    <string-array name="Levels">
+        <item>@string/easy</item>
+        <item>@string/medium</item>
+        <item>@string/hard</item>
+    </string-array>
+    <string-array name="LevelsValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+
+</resources>

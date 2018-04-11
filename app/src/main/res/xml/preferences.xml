@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/game_preferences">
+
+        <EditTextPreference
+            android:dialogTitle="@string/dialog_title_mintime"
+            android:key="@string/edittext_mintime"
+            android:summary="@string/summary_mintime"
+            android:title="@string/title_mintime"
+            android:inputType="number"
+            android:defaultValue="30"
+            />
+
+        <EditTextPreference
+            android:dialogTitle="@string/dialog_title_maxtime"
+            android:key="@string/edittext_maxtime"
+            android:summary="@string/summary_maxtime"
+            android:title="@string/title_maxtime"
+            android:inputType="number"
+            android:defaultValue="60"
+            />
+
+        <ListPreference
+            android:key="@string/difficulty_key"
+            android:title="@string/difficulty"
+            android:entries="@array/Levels"
+            android:entryValues="@array/LevelsValues"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>
