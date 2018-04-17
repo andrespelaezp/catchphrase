@@ -1,4 +1,4 @@
-package com.zproject.apelaez.catchphrase.game.catchphrase;
+package com.zproject.apelaez.catchphrase.game.charade;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,30 +8,30 @@ import android.view.MenuItem;
 import com.zproject.apelaez.catchphrase.R;
 import com.zproject.apelaez.catchphrase.model.Game;
 
-public class CatchphraseActivity extends AppCompatActivity {
+public class CharadeActivity extends AppCompatActivity {
 
-    CatchphraseFragment catchphraseFragment;
+    CharadeFragment gameFragment;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        catchphraseFragment = CatchphraseFragment.newInstance(Game.CATCHPHRASE);
+        gameFragment = CharadeFragment.newInstance(Game.CHARADE);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.container, catchphraseFragment, "catchphrase").commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.container, gameFragment, "catchphrase").commit();
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        catchphraseFragment.backPressed();
+        gameFragment.backPressed();
         finish();
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home){
-            catchphraseFragment.backPressed();
+            gameFragment.backPressed();
             finish();
             return true;
         }

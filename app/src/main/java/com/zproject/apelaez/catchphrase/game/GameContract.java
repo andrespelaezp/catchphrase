@@ -4,6 +4,8 @@ public interface GameContract {
 
     interface View {
 
+        void start();
+
         void play(boolean loop, float speed);
 
         void buzzTimeout();
@@ -19,7 +21,7 @@ public interface GameContract {
 
         void exitGame();
 
-        void exitGame(int redId);
+        void finishGame(int redId);
 
         void swipe();
     }

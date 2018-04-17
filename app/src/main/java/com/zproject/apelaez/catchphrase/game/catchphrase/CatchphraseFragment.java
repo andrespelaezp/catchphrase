@@ -20,20 +20,27 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.zproject.apelaez.catchphrase.R;
+import com.zproject.apelaez.catchphrase.adapters.DepthPageTransformer;
 import com.zproject.apelaez.catchphrase.adapters.ScreenSlidePagerAdapter;
 import com.zproject.apelaez.catchphrase.adapters.ZoomOutPageTransformer;
 import com.zproject.apelaez.catchphrase.game.GameContract;
+import com.zproject.apelaez.catchphrase.game.GameFragment;
+import com.zproject.apelaez.catchphrase.game.charade.CharadeFragment;
+import com.zproject.apelaez.catchphrase.model.Game;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class GameFragment extends Fragment implements GameContract.View {
+public class CatchphraseFragment extends GameFragment implements GameContract.View {
 
     @BindView(R.id.viewPager)
     ViewPager mPager;
     @BindView(R.id.exit)
     ImageView exit;
+
+    private static final String TAG = "CatchphraseFragment";
+    private static final String GAME_ARG = TAG + ".game_type";
 
     MediaPlayer mp;
     CatchphrasePresenter presenter;
@@ -61,8 +68,12 @@ public class GameFragment extends Fragment implements GameContract.View {
         }
     };
 
-    public static GameFragment newInstance() {
-        return new GameFragment();
+    public static CatchphraseFragment newInstance(Game GameType) {
+        Bundle args = new Bundle();
+        args.putString(GAME_ARG, GameType.name());
+        CatchphraseFragment fragment = new CatchphraseFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
@@ -85,7 +96,7 @@ public class GameFragment extends Fragment implements GameContract.View {
 
         mPagerAdapter = new ScreenSlidePagerAdapter(getActivity().getSupportFragmentManager(), 2);
         mPager.setAdapter(mPagerAdapter);
-        mPager.setPageTransformer(true, new ZoomOutPageTransformer());
+        mPager.setPageTransformer(true, new DepthPageTransformer());
         mPager.addOnPageChangeListener(listener);
 
     }
@@ -96,21 +107,13 @@ public class GameFragment extends Fragment implements GameContract.View {
     }
 
     @Override
-    public void play(boolean loop, float speed) {
-//        if (mp != null && mp.isPlaying()) {
-//            mp.stop();
-//        }
-//        mp.setLooping(loop);
-//        mp.setPlaybackParams(mp.getPlaybackParams().setSpeed(speed));
-        mp.start();
+    public void start() {
+        presenter.startTimer();
+    }
 
-        //TODO: Support previous versions
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//
-//        } else {
-//            playSpeedSupport(speed);
-//            mp.stop();
-//        }
+    @Override
+    public void play(boolean loop, float speed) {
+        mp.start();
     }
 
     @Override

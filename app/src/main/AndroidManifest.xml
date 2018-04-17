@@ -26,6 +26,15 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
+            android:name=".game.charade.CharadeActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".game.GameActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
             android:name=".configurations.ConfigActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />

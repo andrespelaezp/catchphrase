@@ -2,6 +2,28 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="@string/game_preferences">
 
+        <ListPreference
+            android:key="@string/difficulty_key"
+            android:title="@string/difficulty"
+            android:entries="@array/Levels"
+            android:entryValues="@array/LevelsValues"/>
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/charade_preferences">
+
+        <EditTextPreference
+            android:dialogTitle="@string/dialog_title_time"
+            android:key="@string/edittext_time"
+            android:summary="@string/summary_time"
+            android:title="@string/title_time"
+            android:inputType="number"
+            android:defaultValue="40"
+            />
+
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/catchphrase_preferences">
+
         <EditTextPreference
             android:dialogTitle="@string/dialog_title_mintime"
             android:key="@string/edittext_mintime"
@@ -20,11 +42,6 @@
             android:defaultValue="60"
             />
 
-        <ListPreference
-            android:key="@string/difficulty_key"
-            android:title="@string/difficulty"
-            android:entries="@array/Levels"
-            android:entryValues="@array/LevelsValues"/>
 
     </PreferenceCategory>
 </PreferenceScreen>

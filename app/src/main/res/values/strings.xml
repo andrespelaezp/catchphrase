@@ -3,7 +3,8 @@
 
     <!-- Main menu -->
     <string name="config">Configurations</string>
-    <string name="start_game">Start game</string>
+    <string name="start_catchphrase">Start Catchphrase game</string>
+    <string name="start_charade">Start Charade game</string>
 
     <!-- Game -->
     <string name="game_started">Game started</string>
@@ -11,8 +12,11 @@
 
     <!-- Preferences -->
     <string name="game_preferences">Game preferences</string>
+    <string name="catchphrase_preferences">Catchphrase preferences</string>
+    <string name="charade_preferences">Charades preferences</string>
     <string name="edittext_mintime">key_min</string>
     <string name="edittext_maxtime">key_max</string>
+    <string name="edittext_time">key_time</string>
     <string name="difficulty_key">key_difficulty</string>
 
     <!-- Minimum time -->
@@ -25,6 +29,11 @@
     <string name="summary_maxtime">Maximum time for the buzzer sound</string>
     <string name="title_maxtime">Max Time</string>
     <string name="timeout">Time is out</string>
+
+    <!-- Maximum time -->
+    <string name="dialog_title_time">Maximum time</string>
+    <string name="summary_time">Maximum time for the buzzer sound</string>
+    <string name="title_time">Max Time</string>
 
     <string name="easy">Easy</string>
     <string name="medium">Medium</string>

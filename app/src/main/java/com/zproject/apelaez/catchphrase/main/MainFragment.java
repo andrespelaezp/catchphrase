@@ -13,6 +13,7 @@ import android.widget.Button;
 import com.zproject.apelaez.catchphrase.R;
 import com.zproject.apelaez.catchphrase.configurations.ConfigActivity;
 import com.zproject.apelaez.catchphrase.game.catchphrase.CatchphraseActivity;
+import com.zproject.apelaez.catchphrase.game.charade.CharadeActivity;
 
 import butterknife.OnClick;
 import butterknife.BindView;
@@ -20,8 +21,11 @@ import butterknife.ButterKnife;
 
 public class MainFragment extends Fragment {
 
-    @BindView(R.id.btn_start)
-    Button btnStart;
+    @BindView(R.id.btn_catchphrase)
+    Button btnCatchphrase;
+
+    @BindView(R.id.btn_charade)
+    Button btnCharade;
 
     @BindView(R.id.btn_config)
     Button btnConfig;
@@ -38,9 +42,14 @@ public class MainFragment extends Fragment {
         ButterKnife.bind(this, view);
     }
 
-    @OnClick(R.id.btn_start)
-    void start() {
+    @OnClick(R.id.btn_catchphrase)
+    void catchphrase() {
         startActivity(new Intent(getActivity(), CatchphraseActivity.class));
+    }
+
+    @OnClick(R.id.btn_charade)
+    void charade() {
+        startActivity(new Intent(getActivity(), CharadeActivity.class));
     }
 
     @OnClick(R.id.btn_config)

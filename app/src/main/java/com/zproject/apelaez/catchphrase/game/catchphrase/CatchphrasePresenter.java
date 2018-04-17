@@ -50,7 +50,7 @@ public class CatchphrasePresenter implements GameContract.UserActionsListener {
     }
 
     @Override
-    public void exitGame(int resId){
+    public void finishGame(int resId){
         if (running)
             view.showMsg(resId);
         running = false;
@@ -69,7 +69,7 @@ public class CatchphrasePresenter implements GameContract.UserActionsListener {
         myTimer.schedule(new TimerTask() {
             @Override
             public void run() {
-                exitGame(R.string.timeout);
+                finishGame(R.string.timeout);
             }
         }, Utilities.randomValue(min, max) * 1000);
 
